@@ -1,0 +1,14 @@
+CMake Warning at C:/Users/aluno/esp/v5.3/v5.3/esp-idf/tools/cmake/component.cmake:294 (message):
+  No source files found for SRC_DIRS entry '.'.
+Call Stack (most recent call first):
+  C:/Users/aluno/esp/v5.3/v5.3/esp-idf/tools/cmake/component.cmake:444 (__component_add_sources)
+  components/tex/CMakeLists.txt:1 (idf_component_register)
+
+
+CMake Warning at C:/Users/aluno/esp/v5.3/v5.3/esp-idf/tools/cmake/component.cmake:294 (message):
+  No source files found for SRC_DIRS entry 'Interfaces'.
+Call Stack (most recent call first):
+  C:/Users/aluno/esp/v5.3/v5.3/esp-idf/tools/cmake/component.cmake:444 (__component_add_sources)
+  components/tex/CMakeLists.txt:1 (idf_component_register)
+
+

@@ -1,0 +1,13 @@
+# Target labels
+ bootloader
+# Source files and their labels
+C:/Users/aluno/Desktop/teste_oled/i2c_oled/build/CMakeFiles/bootloader
+C:/Users/aluno/Desktop/teste_oled/i2c_oled/build/CMakeFiles/bootloader.rule
+C:/Users/aluno/Desktop/teste_oled/i2c_oled/build/CMakeFiles/bootloader-complete.rule
+C:/Users/aluno/Desktop/teste_oled/i2c_oled/build/bootloader-prefix/src/bootloader-stamp/bootloader-build.rule
+C:/Users/aluno/Desktop/teste_oled/i2c_oled/build/bootloader-prefix/src/bootloader-stamp/bootloader-configure.rule
+C:/Users/aluno/Desktop/teste_oled/i2c_oled/build/bootloader-prefix/src/bootloader-stamp/bootloader-download.rule
+C:/Users/aluno/Desktop/teste_oled/i2c_oled/build/bootloader-prefix/src/bootloader-stamp/bootloader-install.rule
+C:/Users/aluno/Desktop/teste_oled/i2c_oled/build/bootloader-prefix/src/bootloader-stamp/bootloader-mkdir.rule
+C:/Users/aluno/Desktop/teste_oled/i2c_oled/build/bootloader-prefix/src/bootloader-stamp/bootloader-patch.rule
+C:/Users/aluno/Desktop/teste_oled/i2c_oled/build/bootloader-prefix/src/bootloader-stamp/bootloader-update.rule
