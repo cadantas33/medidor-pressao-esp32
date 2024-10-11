@@ -4,7 +4,7 @@ Medidor de pressão utilizando uma Lilygo TTGO ESP32 com display OLED integrado 
 
 # Antes de começar
 
-- No arquivo "CMakelists.txt", alterar toda a linha 'include' para 'include "[diretório do seu esp-idf tools]\cmake\project.cmake" '.
+- No arquivo "CMakelists.txt", na pasta raiz do repositório, altere toda a linha 'include' para 'include "[diretório do seu esp-idf tools]\cmake\project.cmake" '.
 
   Deverá ficar como mostra a imagem:
   
