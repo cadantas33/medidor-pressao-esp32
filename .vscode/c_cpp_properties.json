@@ -3,11 +3,11 @@
         {
             "name": "ESP-IDF",
             "compilerPath": "${config:idf.toolsPathWin}\\tools\\xtensa-esp-elf\\esp-13.2.0_20240530\\xtensa-esp-elf\\bin\\xtensa-esp32-elf-gcc.exe",
-            "compileCommands": "${config:idf.buildPath}/compile_commands.json",
             "includePath": [
                 "${config:idf.espIdfPath}/components/**",
                 "${config:idf.espIdfPathWin}/components/**",
-                "${workspaceFolder}/**"
+                "${workspaceFolder}/**",
+                "C:\\Users\\caioc\\esp\\v5.3.1\\esp-idf\\components\\**"
             ],
             "browse": {
                 "path": [
