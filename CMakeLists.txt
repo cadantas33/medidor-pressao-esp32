@@ -1,5 +1,5 @@
-cmake_minimum_required(VERSION 3.31)
 
-include ("C:\\Users\\caioc\\esp\\v5.3.1\\esp-idf\\tools\\cmake\\project.cmake")
+cmake_minimum_required(VERSION 3.16)
 
-project(medidor-pressao-esp32)
+include($ENV{IDF_PATH}/tools/cmake/project.cmake)
+project(esp32-gauge)
