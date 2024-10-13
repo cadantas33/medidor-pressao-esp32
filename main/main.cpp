@@ -15,10 +15,21 @@ cbspI2C I2CChannel1;
 cBMP280 BMP280;
 cSMP3011 SMP3011;
 
+#define VBAT_PIN GPIO_NUM_35
+
+int adc_value = 0;
+float vbat = 0;
+
+esp_err_t adc1_config_channel_atten(ADC1_CHANNEL_8, ADC_ATTEN_DB_2_5);
+esp_err_t adc1_config_width(ADC1_WIDTH_BIT_12);
+
 extern void example_lvgl_demo_ui(lv_disp_t *disp);
 
 extern "C" void app_main()
 {
+    
+    //gpio_set_direction(VBAT_PIN, GPIO_MODE_INPUT);
+
     i2c_oled_init();
 
     I2CChannel1.init(I2C_NUM_1, GPIO_NUM_33, GPIO_NUM_32);
@@ -63,8 +74,13 @@ extern "C" void app_main()
 
     while (true)
     {
+        adc_value = adc_get_raw(ADC1_CHANNEL_8);
+
         BMP280.poll();
         SMP3011.poll();
+
+        printf("\nValor ADC: %i", adc_value);
+
         printf("\rPressao e temperatura: %6.0fPa %6.2fC Pressao SMP: %6.0fPa %6.2fC",
                BMP280.getPressure(), BMP280.getTemperature(),
                SMP3011.getPressure(), SMP3011.getTemperature());
