@@ -39,11 +39,11 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/Games/PI-II/ESP32-Gauge/esp32-gau/build/esp-idf/esp_hw_support/port/esp32/cmake_install.cmake")
+  include("C:/Games/PI-II/ESP32-Gauge/esp32-gauge/build/esp-idf/esp_hw_support/port/esp32/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/Games/PI-II/ESP32-Gauge/esp32-gau/build/esp-idf/esp_hw_support/lowpower/cmake_install.cmake")
+  include("C:/Games/PI-II/ESP32-Gauge/esp32-gauge/build/esp-idf/esp_hw_support/lowpower/cmake_install.cmake")
 endif()
 

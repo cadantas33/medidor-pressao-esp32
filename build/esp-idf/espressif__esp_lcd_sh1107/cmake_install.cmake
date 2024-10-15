@@ -1,4 +1,4 @@
-# Install script for directory: C:/Games/PI-II/ESP32-Gauge/esp32-gau/managed_components/espressif__esp_lcd_sh1107
+# Install script for directory: C:/Games/PI-II/ESP32-Gauge/esp32-gauge/managed_components/espressif__esp_lcd_sh1107
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

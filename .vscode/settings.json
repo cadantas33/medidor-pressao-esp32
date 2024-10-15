@@ -18,5 +18,5 @@
     "ESP_ROM_ELF_DIR": "C:\\Users\\caioc\\.espressif\\tools\\esp-rom-elfs\\20240305/"
   },
   "idf.gitPathWin": "C:\\Users\\caioc\\.espressif\\tools\\idf-git\\2.39.2\\cmd\\git.exe",
-  "C_Cpp.default.compilerPath": "cl.exe"
+  "C_Cpp.default.compilerPath": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\Llvm\\x64\\bin\\clang.exe"
 }

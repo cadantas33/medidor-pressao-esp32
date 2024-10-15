@@ -91,7 +91,7 @@ CMAKE_EXE_LINKER_FLAGS_RELEASE:STRING=
 CMAKE_EXE_LINKER_FLAGS_RELWITHDEBINFO:STRING=
 
 //Value Computed by CMake.
-CMAKE_FIND_PACKAGE_REDIRECTS_DIR:STATIC=C:/Games/PI-II/ESP32-Gauge/medidor-pressao-esp32/CMakeFiles/pkgRedirects
+CMAKE_FIND_PACKAGE_REDIRECTS_DIR:STATIC=C:/Games/PI-II/ESP32-Gauge/esp32-gauge/CMakeFiles/pkgRedirects
 
 //Install path prefix, prepended onto install directories.
 CMAKE_INSTALL_PREFIX:PATH=C:/Program Files (x86)/esp32-gauge
@@ -218,13 +218,13 @@ IDF_TARGET:STRING=esp32
 IDF_TOOLCHAIN:STRING=gcc
 
 //Value Computed by CMake
-esp32-gauge_BINARY_DIR:STATIC=C:/Games/PI-II/ESP32-Gauge/medidor-pressao-esp32
+esp32-gauge_BINARY_DIR:STATIC=C:/Games/PI-II/ESP32-Gauge/esp32-gauge
 
 //Value Computed by CMake
 esp32-gauge_IS_TOP_LEVEL:STATIC=ON
 
 //Value Computed by CMake
-esp32-gauge_SOURCE_DIR:STATIC=C:/Games/PI-II/ESP32-Gauge/medidor-pressao-esp32
+esp32-gauge_SOURCE_DIR:STATIC=C:/Games/PI-II/ESP32-Gauge/esp32-gauge
 
 
 ########################
@@ -246,7 +246,7 @@ CMAKE_ASM_FLAGS_RELEASE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_ASM_FLAGS_RELWITHDEBINFO
 CMAKE_ASM_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //This is the directory where this CMakeCache.txt was created
-CMAKE_CACHEFILE_DIR:INTERNAL=c:/Games/PI-II/ESP32-Gauge/medidor-pressao-esp32
+CMAKE_CACHEFILE_DIR:INTERNAL=C:/Games/PI-II/ESP32-Gauge/esp32-gauge
 //Major version of cmake used to create the current loaded cache
 CMAKE_CACHE_MAJOR_VERSION:INTERNAL=3
 //Minor version of cmake used to create the current loaded cache
@@ -309,7 +309,7 @@ CMAKE_GENERATOR_PLATFORM:INTERNAL=
 CMAKE_GENERATOR_TOOLSET:INTERNAL=
 //Source directory with the top level CMakeLists.txt file for this
 // project
-CMAKE_HOME_DIRECTORY:INTERNAL=C:/Games/PI-II/ESP32-Gauge/medidor-pressao-esp32
+CMAKE_HOME_DIRECTORY:INTERNAL=C:/Games/PI-II/ESP32-Gauge/esp32-gauge
 //ADVANCED property for variable: CMAKE_LINKER
 CMAKE_LINKER-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_MAKE_PROGRAM

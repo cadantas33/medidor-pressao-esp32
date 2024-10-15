@@ -1,6 +1,6 @@
 /* Automatically generated file; DO NOT EDIT */
 /* Espressif IoT Development Framework Linker Script */
-/* Generated from: C:\Games\PI-II\ESP32-Gauge\esp32-gau\build\esp-idf\esp_system\ld\sections.ld.in */
+/* Generated from: C:\Games\PI-II\ESP32-Gauge\esp32-gauge\build\esp-idf\esp_system\ld\sections.ld.in */
 
 /*
 

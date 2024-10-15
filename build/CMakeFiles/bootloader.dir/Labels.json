@@ -2,34 +2,34 @@
 	"sources" : 
 	[
 		{
-			"file" : "C:/Games/PI-II/ESP32-Gauge/esp32-gau/build/CMakeFiles/bootloader"
+			"file" : "C:/Games/PI-II/ESP32-Gauge/esp32-gauge/build/CMakeFiles/bootloader"
 		},
 		{
-			"file" : "C:/Games/PI-II/ESP32-Gauge/esp32-gau/build/CMakeFiles/bootloader.rule"
+			"file" : "C:/Games/PI-II/ESP32-Gauge/esp32-gauge/build/CMakeFiles/bootloader.rule"
 		},
 		{
-			"file" : "C:/Games/PI-II/ESP32-Gauge/esp32-gau/build/CMakeFiles/bootloader-complete.rule"
+			"file" : "C:/Games/PI-II/ESP32-Gauge/esp32-gauge/build/CMakeFiles/bootloader-complete.rule"
 		},
 		{
-			"file" : "C:/Games/PI-II/ESP32-Gauge/esp32-gau/build/bootloader-prefix/src/bootloader-stamp/bootloader-build.rule"
+			"file" : "C:/Games/PI-II/ESP32-Gauge/esp32-gauge/build/bootloader-prefix/src/bootloader-stamp/bootloader-build.rule"
 		},
 		{
-			"file" : "C:/Games/PI-II/ESP32-Gauge/esp32-gau/build/bootloader-prefix/src/bootloader-stamp/bootloader-configure.rule"
+			"file" : "C:/Games/PI-II/ESP32-Gauge/esp32-gauge/build/bootloader-prefix/src/bootloader-stamp/bootloader-configure.rule"
 		},
 		{
-			"file" : "C:/Games/PI-II/ESP32-Gauge/esp32-gau/build/bootloader-prefix/src/bootloader-stamp/bootloader-download.rule"
+			"file" : "C:/Games/PI-II/ESP32-Gauge/esp32-gauge/build/bootloader-prefix/src/bootloader-stamp/bootloader-download.rule"
 		},
 		{
-			"file" : "C:/Games/PI-II/ESP32-Gauge/esp32-gau/build/bootloader-prefix/src/bootloader-stamp/bootloader-install.rule"
+			"file" : "C:/Games/PI-II/ESP32-Gauge/esp32-gauge/build/bootloader-prefix/src/bootloader-stamp/bootloader-install.rule"
 		},
 		{
-			"file" : "C:/Games/PI-II/ESP32-Gauge/esp32-gau/build/bootloader-prefix/src/bootloader-stamp/bootloader-mkdir.rule"
+			"file" : "C:/Games/PI-II/ESP32-Gauge/esp32-gauge/build/bootloader-prefix/src/bootloader-stamp/bootloader-mkdir.rule"
 		},
 		{
-			"file" : "C:/Games/PI-II/ESP32-Gauge/esp32-gau/build/bootloader-prefix/src/bootloader-stamp/bootloader-patch.rule"
+			"file" : "C:/Games/PI-II/ESP32-Gauge/esp32-gauge/build/bootloader-prefix/src/bootloader-stamp/bootloader-patch.rule"
 		},
 		{
-			"file" : "C:/Games/PI-II/ESP32-Gauge/esp32-gau/build/bootloader-prefix/src/bootloader-stamp/bootloader-update.rule"
+			"file" : "C:/Games/PI-II/ESP32-Gauge/esp32-gauge/build/bootloader-prefix/src/bootloader-stamp/bootloader-update.rule"
 		}
 	],
 	"target" : 
