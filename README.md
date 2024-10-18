@@ -1,13 +1,10 @@
 # Medidor de pressão utilizando uma Lilygo TTGO ESP32 com display OLED integrado
 
-Medidor de pressão utilizando uma Lilygo TTGO ESP32 com display OLED integrado e sensores BMP280, de temperatura e pressão barométrica, e SMP3011, de presssão.
+Medidor de pressão utilizando uma Lilygo TTGO ESP32 com display OLED integrado e sensores BMP280, de temperatura e pressão barométrica, e SMP3011, de pressão.
 
 # Antes de começar
 
-- No arquivo "CMakelists.txt", na pasta raiz do repositório, altere toda a linha 'include' para 'include "[diretório do seu esp-idf tools]\cmake\project.cmake" '.
+É necessário que o sistema possua as variáveis de ambiente `PATH` e `IDF_PATH`, para que o código do projeto carregue todas as dependências.
 
-  Deverá ficar como mostra a imagem:
-  
-  ![image](https://github.com/user-attachments/assets/c82481ad-1017-44d0-86be-baa6e71737bd)
-
-
+Para funcionamento dos sensores e display:
+- Abra o temrminal do Visual Studio Code e execute `git clone --recursive https://github.com/eng-software/ComponentesESP32.git components\tex` para obter os componentes herdados para o projeto.
