@@ -260,7 +260,7 @@
     "IDF_CMAKE": true,
     "IDF_EXPERIMENTAL_FEATURES": false,
     "IDF_FIRMWARE_CHIP_ID": 0,
-    "IDF_INIT_VERSION": "5.3.0",
+    "IDF_INIT_VERSION": "5.3.1",
     "IDF_TARGET": "esp32",
     "IDF_TARGET_ARCH": "xtensa",
     "IDF_TARGET_ARCH_XTENSA": true,

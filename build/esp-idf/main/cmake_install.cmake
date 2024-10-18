@@ -1,4 +1,4 @@
-# Install script for directory: C:/Games/PI-II/ESP32-Gauge/esp32-gau/main
+# Install script for directory: C:/Games/PI-II/ESP32-Gauge/esp32-gauge/main
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

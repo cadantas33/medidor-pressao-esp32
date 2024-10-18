@@ -2,12 +2,12 @@
     "configurations": [
         {
             "name": "ESP-IDF",
-            "compilerPath": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\Llvm\\x64\\bin\\clang.exe",
+            "compilerPath": "${env:PATH}VC\\Tools\\Llvm\\x64\\binclang.exe",
             "includePath": [
                 "${config:idf.espIdfPath}/components/**",
                 "${config:idf.espIdfPathWin}/components/**",
                 "${workspaceFolder}/**",
-                "C:\\Users\\caioc\\esp\\v5.3.1\\esp-idf\\components\\**"
+                "${config:idf.espIdfPath}\\components\\**"
             ],
             "browse": {
                 "path": [

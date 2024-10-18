@@ -117,7 +117,7 @@ extern "C" void app_main()
         lv_label_set_text_fmt(labelBMP280Press, "%6.2fpsi", press_bmp280);
         lv_label_set_text_fmt(labelBMP280Temp, "%6.2f\xb0\ C", BMP280.getTemperature());
         lv_label_set_text_fmt(labelSMP3011Press, "%6.2fpsi", press_smp3011);
-        lv_label_set_text_fmt(labelSMP3011Temp, "%6.2fC", SMP3011.getTemperature());
+        lv_label_set_text_fmt(labelSMP3011Temp, "%6.2f\xb0\ C", SMP3011.getTemperature());
         lvgl_port_unlock();
 
         vTaskDelay(pdMS_TO_TICKS(1000));
