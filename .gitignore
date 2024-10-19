@@ -2,7 +2,7 @@
 .devcontainer/
 .vscode/
 build/
-
+# ignora arquivos de configuração desnecessários
 sdkconfig
 sdkconfig.defaults
 sdkconfig.old
