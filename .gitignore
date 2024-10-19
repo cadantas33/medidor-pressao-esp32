@@ -1,3 +1,4 @@
+# ignora diretórios que são gerados localmente
 .devcontainer/
 .vscode/
 build/
