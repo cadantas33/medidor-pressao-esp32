@@ -8,4 +8,10 @@ Medidor de pressão utilizando uma Lilygo TTGO ESP32 com display OLED integrado 
 - É necessário que o sistema possua as variáveis de ambiente `PATH`, contendo o diretório `/.espressif/` e `%IDF_PATH/tools`, e `IDF_PATH`, contendo o diretório onde está instalado o ESP-IDF, para que o código do projeto carregue todas as dependências;
 
 Para funcionamento dos sensores e display:
-- Abra o temrminal do Visual Studio Code e execute `git clone --recursive https://github.com/eng-software/ComponentesESP32.git components\tex` para obter os componentes herdados para o projeto.
+- Abra o temrminal do Visual Studio Code e execute `git clone --recursive https://github.com/eng-software/ComponentesESP32.git components\tex` para obter os componentes herdados para o projeto;
+
+Para carregar o software para a placa ESP32:
+
+- Na aba da extensão do IDF, selectione `Set Espressif Target`;
+- Selecione a primeira opção, `esp32`;
+- Selecione a última opção, `Custom board`.
