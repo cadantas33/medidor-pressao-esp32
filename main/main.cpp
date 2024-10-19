@@ -48,7 +48,7 @@ extern "C" void getPressure()
     if (pressure_bmp280 > 1.1)
     {
         // Realiza 5 leituras por segundo e some ao valor anterior
-        while (i <= 5)
+        while (i <= 5) 
         {
             if ((time_offset - last_time) >= 200)
             {
