@@ -1,6 +1,0 @@
-{
-    "idf.adapterTargetName": "esp32",
-    "python.testing.cwd": "${workspaceFolder}",
-    "idf.portWin": "COM4",
-    "idf.flashType": "UART"
-}
