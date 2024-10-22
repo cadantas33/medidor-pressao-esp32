@@ -14,8 +14,8 @@
 #include "cBMP280.h"
 #include "cSMP3011.h"
 
-#define KPA_PSI 0.000145
-#define PSI_BAR 0.0689
+#define KPA_PSI 0.14503
+#define KPA_BAR 0.01
 #define KPA_ATM 0.00986
 
 cbspI2C I2CChannel1;
@@ -25,7 +25,7 @@ cSMP3011 SMP3011;
 // esp_adc_cal_characteristics_t adc1_chars;
 
 // Recebe o tempo atual
-int time_offset = esp_timer_get_time();
+int time_offset = esp_timer_get_time() * 1000;
 int last_time = 0;
 
 // Inicializa variáveis para leitura da bateria
@@ -45,7 +45,10 @@ extern "C" void getPressure()
     pressure_bmp280 = (BMP280.getPressure()) * KPA_ATM;
     pressure_smp3011 = (SMP3011.getPressure()) * KPA_PSI;
 
-    if (pressure_bmp280 > 1.1)
+    // Verifica se houve alguma alteração na pressão atmosférica através do bmp280
+    // Caso haja, calcula a pressão interna do pneu
+    //  Caso contrário, o valor de pressão padrão será zero
+    if (pressure_bmp280 > 1.0)
     {
         // Realiza 5 leituras por segundo e some ao valor anterior
         while (i <= 5) 
@@ -64,7 +67,7 @@ extern "C" void getPressure()
     }
 
     avg_pressure = pressure_smp3011 / 5;
-    pressure_smp3011_bar = avg_pressure * PSI_BAR;
+    pressure_smp3011_bar = avg_pressure * KPA_BAR;
 }
 
 extern "C" void app_main()
