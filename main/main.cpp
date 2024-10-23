@@ -45,11 +45,11 @@ extern "C" void updatePressure()
     int i = 0;
 
     pressure_smp3011 = (SMP3011.getPressure() * -1) * KPA_PSI;
-    //atm_pressure = pressure_smp3011 * PSI_ATM;
-    atm_pressure = (BMP280.getPressure()*PA_PSI) * PSI_ATM;
+    // atm_pressure = pressure_smp3011 * PSI_ATM;
+    atm_pressure = (BMP280.getPressure() * PA_PSI) * PSI_ATM;
 
     // Verifica se houve alguma alteração na pressão do ambiente através do smp3011
-    
+
     // Caso haja, calcula a pressão interna do pneu
     //  Caso contrário, o valor de pressão padrão será zero
 
@@ -61,7 +61,7 @@ extern "C" void updatePressure()
     if (atm_pressure > 1)
     {
         // Realiza 5 leituras por segundo e some ao valor anterior
-        while (i <= 5) 
+        while (i <= 5)
         {
             if ((time_offset - last_time) >= 200)
             {
@@ -97,7 +97,7 @@ extern "C" void app_main()
 
     lvgl_port_lock(0);
 
-    //float temp = BMP280.getTemperature();
+    // float temp = BMP280.getTemperature();
 
     lv_obj_t *scr = lv_disp_get_scr_act(nullptr);
 
@@ -105,7 +105,7 @@ extern "C" void app_main()
     lv_style_init(&estilo_fonte);
 
     // Definição temperatura do BMP280 no display
-    //lv_obj_t *labelBMP280Temp = lv_label_create(scr);
+    // lv_obj_t *labelBMP280Temp = lv_label_create(scr);
     /*lv_label_set_long_mode(labelBMP280Temp, LV_LABEL_LONG_SCROLL_CIRCULAR);
     lv_label_set_text_fmt(labelBMP280Temp, "%6.0f", temp);
     lv_obj_set_width(labelBMP280Temp, 128);
@@ -136,15 +136,13 @@ extern "C" void app_main()
 
         updatePressure();
 
-        
-
         printf("\nPressão: %6.2fpsi --- %6.2fbar -- \nATM: %6.2f", avg_pressure,
                pressure_smp3011_bar, atm_pressure);
 
         lvgl_port_lock(0);
         // Para inserção de caractéres especiais, utilize "\hex\"
         lv_label_set_text_fmt(labelSMP3011Press, "%6.2f psi\n %6.2f bar", avg_pressure, pressure_smp3011_bar);
-        //lv_label_set_text_fmt(labelBMP280Temp, "%6.2f\xb0\ C", temp); // exibição da temperatura
+        // lv_label_set_text_fmt(labelBMP280Temp, "%6.2f\xb0\ C", temp); // exibição da temperatura
         lvgl_port_unlock();
 
         vTaskDelay(pdMS_TO_TICKS(1000));
