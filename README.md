@@ -19,4 +19,4 @@ Para carregar o software para a placa ESP32:
 # Detalhe adicional
 
   Verifique se os drivers de comunicação serial se encontram instalados em sua máquina.
-  Caso não estejam, instale-os [aqui](https://www.silabs.com/documents/public/software/CP210x_Universal_Windows_Driver.zip).
+  Caso não estejam, instale-os [aqui](https://www.silabs.com/documents/public/software/CP210x_Windows_Drivers.zip), selecionando a opção x64 ou x86 dentro do arquivo .zip a depender da arquitetura de sua máquina.
