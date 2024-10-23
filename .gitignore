@@ -6,3 +6,6 @@ build/
 sdkconfig
 sdkconfig.defaults
 sdkconfig.old
+sdkconfig
+sdkconfig.old
+main/lvgl_demo_ui.cpp
