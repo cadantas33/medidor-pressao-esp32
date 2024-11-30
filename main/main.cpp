@@ -4,6 +4,7 @@
 #include "esp_lvgl_port.h"
 
 #include "lvgl.h"
+// #include "lv_theme_simple.h"
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 #include "esp_timer.h"
@@ -41,7 +42,7 @@ uint16_t display_tskSIZE = 4096;
 
 // Inicializa variáveis dos sensores de pressão
 
-float raw_value = 0, voltage = 0, raw_press = 0, atm_pressure = 0, pressure_psi = 0, avg_pressure = 0, avg_pressure_bar = 0;
+float raw_value = 0, atm_pressure = 0, pressure_psi = 0, avg_pressure = 0, avg_pressure_bar = 0;
 
 extern "C" void readPressure(void *params)
 {
@@ -89,23 +90,32 @@ extern "C" void readPressure(void *params)
     }
 }
 
-extern "C" void displayHandler(void *params)
+extern "C" void displayPressure(void *params)
 {
     configASSERT(((uint32_t)params) == 2);
 
     lvgl_port_lock(0);
 
     lv_obj_t *scr = lv_disp_get_scr_act(nullptr);
+
+    // Inicializa fonte a ser utilizada
+    // (Neste caso, apenas para ajustar o tamanho do texto)
     static lv_style_t estilo_fonte;
     lv_style_init(&estilo_fonte);
+
+    // Desenha um retângulo nas bordas do display
+    static lv_obj_t *my_rect = lv_obj_create(lv_scr_act());
+    lv_obj_set_size(my_rect, 20, 20);
+    lv_obj_add_style(my_rect, &estilo_fonte, 1);
+    lv_obj_align(my_rect, LV_ALIGN_TOP_LEFT, 1, 1);
 
     // Definição do SMP3011 no display
     lv_obj_t *labelSMP3011Press = lv_label_create(scr);
     lv_label_set_long_mode(labelSMP3011Press, LV_LABEL_LONG_SCROLL_CIRCULAR);
     lv_label_set_text(labelSMP3011Press, " ");
     lv_obj_set_width(labelSMP3011Press, 128);
-    lv_obj_align(labelSMP3011Press, LV_ALIGN_TOP_LEFT, 2, 0);
-    lv_style_set_text_font(&estilo_fonte, &lv_font_montserrat_22);
+    lv_obj_align(labelSMP3011Press, LV_ALIGN_TOP_LEFT, 4, 0);
+    lv_style_set_text_font(&estilo_fonte, &lv_font_montserrat_20);
     lv_obj_add_style(labelSMP3011Press, &estilo_fonte, 0);
 
     // Definição dos avisos quanto à pressão
@@ -116,6 +126,13 @@ extern "C" void displayHandler(void *params)
     lv_obj_align(labelPressWarn, LV_ALIGN_BOTTOM_LEFT, 2, 2);
     lv_style_set_text_font(&estilo_fonte, &lv_font_montserrat_20);
     lv_obj_add_style(labelPressWarn, &estilo_fonte, 0);
+
+    // Definição dos ícones de avisos
+    lv_obj_t *labelPressIcon = lv_label_create(scr);
+    lv_label_set_long_mode(labelPressIcon, LV_LABEL_LONG_SCROLL_CIRCULAR);
+    lv_label_set_text(labelPressIcon, " ");
+    lv_obj_set_width(labelPressIcon, 128);
+    lv_obj_align(labelPressIcon, LV_ALIGN_BOTTOM_LEFT, 8, 4);
 
     lvgl_port_unlock();
 
@@ -131,8 +148,8 @@ extern "C" void displayHandler(void *params)
             avg_pressure_bar = 0;
         }
 
-        printf("\nPressão: %6.2fpsi -- %6.2fbar\nATM: %6.2f\nRaw Value: %6.2f\nTensao: %6.2f\n-----", avg_pressure,
-               avg_pressure_bar, atm_pressure, raw_value, voltage);
+        printf("\nPressão: %6.2fpsi -- %6.2fbar\nATM: %6.2f\nRaw Value: %6.2f\n", avg_pressure,
+               avg_pressure_bar, atm_pressure, raw_value);
 
         lvgl_port_lock(0);
         // Para inserção de caractéres especiais, utilize "\hex\"
@@ -151,15 +168,18 @@ extern "C" void displayHandler(void *params)
         // Avisa se a pressão dos pneus é ou não adequada
         if (avg_pressure > 32 && avg_pressure <= 40)
         {
-            lv_label_set_text_fmt(labelPressWarn, "Pressao adequada!");
+            lv_label_set_text(labelPressWarn, "Adequado! " LV_SYMBOL_OK);
+            // lv_label_set_text(labelPressIcon, LV_SYMBOL_OK);
         }
         else if (avg_pressure <= 32 && avg_pressure > 27)
         {
-            lv_label_set_text_fmt(labelPressWarn, "Calibragem recomendada");
+            lv_label_set_text(labelPressWarn, "Calibragem recomendada! " LV_SYMBOL_WARNING);
+            // lv_label_set_text(labelPressIcon, LV_SYMBOL_WARNING);
         }
         else if (avg_pressure <= 27)
         {
-            lv_label_set_text_fmt(labelPressWarn, "Calibragem necessaria");
+            lv_label_set_text(labelPressWarn, "Calibrar! " LV_SYMBOL_CLOSE);
+            // lv_label_set_text(labelPressIcon, LV_SYMBOL_CLOSE);
         }
         /*switch (avg_pressure)
         {
@@ -202,7 +222,7 @@ extern "C" void app_main()
     xTaskCreate(readPressure, "read_pressure", configMINIMAL_STACK_SIZE, (void *)1, press_tskPRIORITY, NULL);
 
     // Inicializa task das exibições no display
-    xTaskCreate(displayHandler, "display", display_tskSIZE, (void *)2, display_tskPRIORITY, NULL);
+    xTaskCreate(displayPressure, "display", display_tskSIZE, (void *)2, display_tskPRIORITY, NULL);
 
     // float temp = BMP280.getTemperature();
     /*lvgl_port_lock(0);
