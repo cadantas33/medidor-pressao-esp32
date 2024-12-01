@@ -100,14 +100,10 @@ extern "C" void displayPressure(void *params)
 
     // Inicializa fonte a ser utilizada
     // (Neste caso, apenas para ajustar o tamanho do texto)
-    static lv_style_t estilo_fonte;
-    lv_style_init(&estilo_fonte);
-
-    // Desenha um retângulo nas bordas do display
-    static lv_obj_t *my_rect = lv_obj_create(lv_scr_act());
-    lv_obj_set_size(my_rect, 20, 20);
-    lv_obj_add_style(my_rect, &estilo_fonte, 1);
-    lv_obj_align(my_rect, LV_ALIGN_TOP_LEFT, 1, 1);
+    static lv_style_t press_style;
+    static lv_style_t text_style;
+    lv_style_init(&press_style);
+    lv_style_init(&text_style);
 
     // Definição do SMP3011 no display
     lv_obj_t *labelSMP3011Press = lv_label_create(scr);
@@ -115,8 +111,8 @@ extern "C" void displayPressure(void *params)
     lv_label_set_text(labelSMP3011Press, " ");
     lv_obj_set_width(labelSMP3011Press, 128);
     lv_obj_align(labelSMP3011Press, LV_ALIGN_TOP_LEFT, 4, 0);
-    lv_style_set_text_font(&estilo_fonte, &lv_font_montserrat_20);
-    lv_obj_add_style(labelSMP3011Press, &estilo_fonte, 0);
+    lv_style_set_text_font(&press_style, &lv_font_montserrat_18);
+    lv_obj_add_style(labelSMP3011Press, &press_style, 0);
 
     // Definição dos avisos quanto à pressão
     lv_obj_t *labelPressWarn = lv_label_create(scr);
@@ -124,15 +120,15 @@ extern "C" void displayPressure(void *params)
     lv_label_set_text(labelPressWarn, " ");
     lv_obj_set_width(labelPressWarn, 128);
     lv_obj_align(labelPressWarn, LV_ALIGN_BOTTOM_LEFT, 2, 2);
-    lv_style_set_text_font(&estilo_fonte, &lv_font_montserrat_20);
-    lv_obj_add_style(labelPressWarn, &estilo_fonte, 0);
+    lv_style_set_text_font(&text_style, &lv_font_montserrat_20);
+    lv_obj_add_style(labelPressWarn, &text_style, 0);
 
     // Definição dos ícones de avisos
     lv_obj_t *labelPressIcon = lv_label_create(scr);
     lv_label_set_long_mode(labelPressIcon, LV_LABEL_LONG_SCROLL_CIRCULAR);
     lv_label_set_text(labelPressIcon, " ");
     lv_obj_set_width(labelPressIcon, 128);
-    lv_obj_align(labelPressIcon, LV_ALIGN_BOTTOM_LEFT, 8, 4);
+    lv_obj_align(labelPressIcon, LV_ALIGN_BOTTOM_LEFT, 102, 2);
 
     lvgl_port_unlock();
 
@@ -168,18 +164,18 @@ extern "C" void displayPressure(void *params)
         // Avisa se a pressão dos pneus é ou não adequada
         if (avg_pressure > 32 && avg_pressure <= 40)
         {
-            lv_label_set_text(labelPressWarn, "Adequado! " LV_SYMBOL_OK);
-            // lv_label_set_text(labelPressIcon, LV_SYMBOL_OK);
+            lv_label_set_text(labelPressWarn, "Adequado!");
+            lv_label_set_text(labelPressIcon, LV_SYMBOL_OK);
         }
         else if (avg_pressure <= 32 && avg_pressure > 27)
         {
-            lv_label_set_text(labelPressWarn, "Calibragem recomendada! " LV_SYMBOL_WARNING);
-            // lv_label_set_text(labelPressIcon, LV_SYMBOL_WARNING);
+            lv_label_set_text(labelPressWarn, "Calibragem recomendada!");
+            lv_label_set_text(labelPressIcon, LV_SYMBOL_WARNING);
         }
         else if (avg_pressure <= 27)
         {
-            lv_label_set_text(labelPressWarn, "Calibrar! " LV_SYMBOL_CLOSE);
-            // lv_label_set_text(labelPressIcon, LV_SYMBOL_CLOSE);
+            lv_label_set_text(labelPressWarn, "Calibrar!");
+            lv_label_set_text(labelPressIcon, LV_SYMBOL_CLOSE);
         }
         /*switch (avg_pressure)
         {
